@@ -8,7 +8,8 @@ declare global {
 
 jest.mock('../nats-wrapper');
 
-process.env.STRIPE_KEY = 'sk_test_hnfrAm8rOkryFEnV23jjfFlw';
+process.env.STRIPE_KEY =
+  'sk_test_51LPw7AGcyPXoUQbEHgacgksq4rvRfAbetiWVFZxfILcTrSInObSQUY8kgcynlsZCK62NJvkNGLuLIZKc9PF417Hp00w9hPtFvX';
 
 let mongo: any;
 beforeAll(async () => {
@@ -31,8 +32,8 @@ beforeEach(async () => {
 });
 
 afterAll(async () => {
-  await mongo.stop();
   await mongoose.connection.close();
+  await mongo.stop();
 });
 
 global.signin = (id?: string) => {
